@@ -36,19 +36,46 @@
 
 //third task creating a bool method to check if a number is even or odd and printing the result while taking input from user
 
-using static System.Console;
+// using static System.Console;
 
-static bool  IsEven(int n)
-{
-    return n % 2==0 ;
-}
+// static bool  IsEven(int n)
+// {
+//     return n % 2==0 ;
+// }
 
 //used " using static System.Console;" to avoid writing Console infonr of WriteLine ReadLine every time
 
-WriteLine("Enter a number to check if it's even: ");
+// WriteLine("Enter a number to check if it's even: ");
 
-int number = Convert.ToInt32(ReadLine());
+// int number = Convert.ToInt32(ReadLine());
 
-bool result = IsEven(number);
+// bool result = IsEven(number);
 
-WriteLine("The number is even :" + result);
+// WriteLine("The number is even :" + result);
+
+
+//fourth task creating a centered star triangle pattern using nested loops and printing the result
+
+using static System.Console;
+
+int rows = 7;
+
+//the i loop changes the number of rows
+//j loop changes the number of spaces before the stars 
+// k loop changes the number of stars in each row
+
+for (int i = 1; i <= rows; i++)
+{
+    
+    for (int j = 1; j <= rows - i; j++)
+    {
+        Write(" ");
+    }
+
+    for (int k = 1; k <= i; k++)
+    {
+        Write("* ");
+    }
+
+    WriteLine();
+}
