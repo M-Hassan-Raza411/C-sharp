@@ -18,4 +18,17 @@
 //     Console.WriteLine(i);
 // }
 
+//second task creating a function to square a number and printing the result while taking input from user
 
+using static System.Console;
+static int Square(int n)
+{
+    return n * n;
+}
+Console.WriteLine("Enter a number to square: ");
+
+int number = Convert.ToInt32(Console.ReadLine());
+
+int result = Square(number);
+
+Console.WriteLine("The square of " + number + " is: " + result);
