@@ -131,15 +131,26 @@
 
 //sixth task creating a do while loop to ask user for password until correct password is entered and printing the result while taking input from user
 
+
+// string password;
+
+// do
+// {
+//     WriteLine("Enter your password:");
+//     password = ReadLine();
+
+// } while (password != "hassan123");
+
+// WriteLine("Access granted!");
+
+
+//seventh task creating an array of numbers and printing each element using a for loop and printing the result
+
 using static System.Console;
 
-string password;
+int[] numbers = { 10, 20, 30, 40, 50 };
 
-do
+for (int i = 0; i < numbers.Length; i++)
 {
-    WriteLine("Enter your password:");
-    password = ReadLine();
-
-} while (password != "hassan123");
-
-WriteLine("Access granted!");
+    WriteLine("Element at index " + i + ": " + numbers[i]);
+}
