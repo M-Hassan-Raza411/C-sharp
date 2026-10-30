@@ -85,23 +85,46 @@
 
 //made a number guessing game where user has to guess a number between 1 and 10 and program will tell if the guess is correct or not
 
+
+// int guessNum= 9;
+
+// WriteLine("Guess a number between 1 and 10: ");
+
+// int userGuess = Convert.ToInt32(ReadLine());
+
+// if (userGuess>10 || userGuess<1)
+// {
+//     WriteLine("Please enter a number between 1 and 10.");
+// }
+// else if (userGuess == guessNum)
+// {
+//     WriteLine("You guessed it right!");
+// }
+// else
+// {
+//     WriteLine("Sorry, the correct number was " + guessNum);
+// }
+
+//fifth task creating a while loop to print numbers from 1 to a user defined number and printing the result while taking input from user
+
 using static System.Console;
 
-int guessNum= 9;
+WriteLine("Enter a number to stop the count on : ");
 
-WriteLine("Guess a number between 1 and 10: ");
+int number = Convert.ToInt32(ReadLine());
 
-int userGuess = Convert.ToInt32(ReadLine());
+int i = 1;
 
-if (userGuess>10 || userGuess<1)
+if (number < 1)
 {
-    WriteLine("Please enter a number between 1 and 10.");
-}
-else if (userGuess == guessNum)
-{
-    WriteLine("You guessed it right!");
+    WriteLine("Please enter a number greater than or equal to 1.");
 }
 else
 {
-    WriteLine("Sorry, the correct number was " + guessNum);
+    while (i <= number)
+    {
+        WriteLine(i);
+        i++;
+    }
+    WriteLine("Countdown complete!");
 }
