@@ -1,5 +1,5 @@
 ﻿// Console.WriteLine("nana ");
-
+using static System.Console;
 //first task printing name and age , checking if adult or not and printing numbers from 1 to 10
 //learnt variables types and conditional statements and loops
 
@@ -9,13 +9,13 @@
 
 // var isAdult = age >= 18 ? "yes" : "no";
 
-// Console.WriteLine("My name is " + name + " and I am " + age + " years old.");
+//WriteLine("My name is " + name + " and I am " + age + " years old.");
 
 // Console.WriteLine("Am I an adult? " + isAdult);
 
 // for (int i = 1; i <= 10; i++)
 // {
-//     Console.WriteLine(i);
+//     WriteLine(i);
 // }
 
 //second task creating a function to square a number and printing the result while taking input from user
@@ -25,25 +25,21 @@
 // {
 //     return n * n;
 // }
-// Console.WriteLine("Enter a number to square: ");
+// WriteLine("Enter a number to square: ");
 
-// int number = Convert.ToInt32(Console.ReadLine());
+// int number = Convert.ToInt32(ReadLine());
 
 // int result = Square(number);
 
-// Console.WriteLine("The square of " + number + " is: " + result);
+// WriteLine("The square of " + number + " is: " + result);
 
 
 //third task creating a bool method to check if a number is even or odd and printing the result while taking input from user
-
-// using static System.Console;
 
 // static bool  IsEven(int n)
 // {
 //     return n % 2==0 ;
 // }
-
-//used " using static System.Console;" to avoid writing Console infonr of WriteLine ReadLine every time
 
 // WriteLine("Enter a number to check if it's even: ");
 
@@ -146,11 +142,24 @@
 
 //seventh task creating an array of numbers and printing each element using a for loop and printing the result
 
-using static System.Console;
+// int[] numbers = { 10, 20, 30, 40, 50 };
 
-int[] numbers = { 10, 20, 30, 40, 50 };
+// for (int i = 0; i < numbers.Length; i++)
+// {
+//     WriteLine("Element at index " + i + ": " + numbers[i]);
+// }
 
-for (int i = 0; i < numbers.Length; i++)
+// eighth task finding the largest number in an array using a for loop and printing the result
+
+int[] numbers = { 12, 45, 7, 89, 23, 56 };
+
+int largest = numbers[0];
+
+for (int i = 1; i < numbers.Length; i++)
 {
-    WriteLine("Element at index " + i + ": " + numbers[i]);
+    if (numbers[i] > largest)
+    {
+        largest = numbers[i];
+    }
 }
+WriteLine("The largest number in the array is: " + largest);
