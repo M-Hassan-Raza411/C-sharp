@@ -56,26 +56,52 @@
 
 //fourth task creating a centered star triangle pattern using nested loops and printing the result
 
-using static System.Console;
 
-int rows = 7;
+
+// int rows = 7;
 
 //the i loop changes the number of rows
 //j loop changes the number of spaces before the stars 
 // k loop changes the number of stars in each row
 
-for (int i = 1; i <= rows; i++)
+// for (int i = 1; i <= rows; i++)
+// {
+
+//     for (int j = 1; j <= rows - i; j++)
+//     {
+//         Write(" ");
+//     }
+
+//     for (int k = 1; k <= i; k++)
+//     {
+//         Write("* ");
+//     }
+
+//     WriteLine();
+// }
+
+
+// used " using static System.Console;" to avoid writing Console infonr of WriteLine ReadLine every time
+
+//made a number guessing game where user has to guess a number between 1 and 10 and program will tell if the guess is correct or not
+
+using static System.Console;
+
+int guessNum= 9;
+
+WriteLine("Guess a number between 1 and 10: ");
+
+int userGuess = Convert.ToInt32(ReadLine());
+
+if (userGuess>10 || userGuess<1)
 {
-    
-    for (int j = 1; j <= rows - i; j++)
-    {
-        Write(" ");
-    }
-
-    for (int k = 1; k <= i; k++)
-    {
-        Write("* ");
-    }
-
-    WriteLine();
+    WriteLine("Please enter a number between 1 and 10.");
+}
+else if (userGuess == guessNum)
+{
+    WriteLine("You guessed it right!");
+}
+else
+{
+    WriteLine("Sorry, the correct number was " + guessNum);
 }
