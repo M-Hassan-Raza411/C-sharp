@@ -107,24 +107,39 @@
 
 //fifth task creating a while loop to print numbers from 1 to a user defined number and printing the result while taking input from user
 
+
+
+// WriteLine("Enter a number to stop the count on : ");
+
+// int number = Convert.ToInt32(ReadLine());
+
+// int i = 1;
+
+// if (number < 1)
+// {
+//     WriteLine("Please enter a number greater than or equal to 1.");
+// }
+// else
+// {
+//     while (i <= number)
+//     {
+//         WriteLine(i);
+//         i++;
+//     }
+//     WriteLine("Countdown complete!");
+// }
+
+//sixth task creating a do while loop to ask user for password until correct password is entered and printing the result while taking input from user
+
 using static System.Console;
 
-WriteLine("Enter a number to stop the count on : ");
+string password;
 
-int number = Convert.ToInt32(ReadLine());
-
-int i = 1;
-
-if (number < 1)
+do
 {
-    WriteLine("Please enter a number greater than or equal to 1.");
-}
-else
-{
-    while (i <= number)
-    {
-        WriteLine(i);
-        i++;
-    }
-    WriteLine("Countdown complete!");
-}
+    WriteLine("Enter your password:");
+    password = ReadLine();
+
+} while (password != "hassan123");
+
+WriteLine("Access granted!");
