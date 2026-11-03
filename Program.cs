@@ -215,27 +215,45 @@ using static System.Console;
 // STUDENT MARKS MANAGER PROGRAM
 // Stores student marks in a List and calculates their average.
 
-List<int> marks = new List<int>();
+// List<int> marks = new List<int>();
 
-for (int i = 1; i <= 5; i++)
+// for (int i = 1; i <= 5; i++)
+// {
+//     Write("Enter marks: ");
+//     marks.Add(Convert.ToInt32(ReadLine()));
+// }
+
+// int total = 0;
+
+// foreach (int mark in marks)
+// {
+//     total += mark;
+// }
+
+// WriteLine("\nAll Marks:");
+
+// foreach (int mark in marks)
+// {
+//     WriteLine(mark);
+// }
+
+// WriteLine("Total: " + total);
+// WriteLine("Average: " + (double)total / marks.Count);
+
+
+
+// MULTIPLICATION TABLE GENERATOR PROGRAM
+// Takes a number and prints its multiplication table.
+
+static void PrintTable(int number)
 {
-    Write("Enter marks: ");
-    marks.Add(Convert.ToInt32(ReadLine()));
+    for (int i = 1; i <= 10; i++)
+    {
+        WriteLine(number + " x " + i + " = " + (number * i));
+    }
 }
 
-int total = 0;
+Write("Enter a number: ");
+int number = Convert.ToInt32(ReadLine());
 
-foreach (int mark in marks)
-{
-    total += mark;
-}
-
-WriteLine("\nAll Marks:");
-
-foreach (int mark in marks)
-{
-    WriteLine(mark);
-}
-
-WriteLine("Total: " + total);
-WriteLine("Average: " + (double)total / marks.Count);
+PrintTable(number);
