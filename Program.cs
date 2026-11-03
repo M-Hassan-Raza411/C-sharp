@@ -245,15 +245,127 @@ using static System.Console;
 // MULTIPLICATION TABLE GENERATOR PROGRAM
 // Takes a number and prints its multiplication table.
 
-static void PrintTable(int number)
+// static void PrintTable(int number)
+// {
+//     for (int i = 1; i <= 10; i++)
+//     {
+//         WriteLine(number + " x " + i + " = " + (number * i));
+//     }
+// }
+
+// Write("Enter a number: ");
+// int number = Convert.ToInt32(ReadLine());
+
+// PrintTable(number);
+
+
+
+
+// ATM SIMULATOR PROGRAM
+// Allows users to log in with a PIN, check balance,
+// deposit money, withdraw money and view transaction history.
+
+string correctPin = "1204";
+string enteredPin;
+double balance = 5000;
+int choice = 0;
+
+List<string> history = new List<string>();
+
+// Password authentication
+WriteLine("===== ATM LOGIN =====");
+int i = 0;
+
+do
 {
-    for (int i = 1; i <= 10; i++)
-    {
-        WriteLine(number + " x " + i + " = " + (number * i));
-    }
+    Write("Enter your PIN: ");
+    enteredPin = ReadLine();
+
+    if (enteredPin != correctPin)
+        WriteLine("Incorrect PIN! Try again.");
+
+    i++;
+} while (enteredPin != correctPin && i < 3);
+
+if (i == 3)
+{
+    WriteLine("Too many failed attempts. Please try again later.");
+    return;
 }
 
-Write("Enter a number: ");
-int number = Convert.ToInt32(ReadLine());
+WriteLine("Login successful!");
 
-PrintTable(number);
+// ATM Menu
+while (choice != 5)
+{
+    WriteLine("\n===== ATM MENU =====");
+    WriteLine("1. Check Balance");
+    WriteLine("2. Deposit Money");
+    WriteLine("3. Withdraw Money");
+    WriteLine("4. Transaction History");
+    WriteLine("5. Exit");
+
+    Write("Choose an option: ");
+    choice = Convert.ToInt32(ReadLine());
+
+    if (choice == 1)
+    {
+        WriteLine("Balance: " + balance);
+    }
+    else if (choice == 2)
+    {
+        Write("Enter deposit amount: ");
+        double amount = Convert.ToDouble(ReadLine());
+
+        if (amount > 0)
+        {
+            balance += amount;
+            history.Add("Deposited: " + amount);
+            WriteLine("Deposit successful!");
+        }
+        else
+        {
+            WriteLine("Invalid amount!");
+        }
+    }
+    else if (choice == 3)
+    {
+        Write("Enter withdrawal amount: ");
+        double amount = Convert.ToDouble(ReadLine());
+
+        if (amount > 0 && amount <= balance)
+        {
+            balance -= amount;
+            history.Add("Withdrawn: " + amount);
+            WriteLine("Withdrawal successful!");
+        }
+        else
+        {
+            WriteLine("Insufficient balance or invalid amount!");
+        }
+    }
+    else if (choice == 4)
+    {
+        WriteLine("\n===== TRANSACTION HISTORY =====");
+
+        if (history.Count == 0)
+        {
+            WriteLine("No transactions yet.");
+        }
+        else
+        {
+            foreach (string transaction in history)
+            {
+                WriteLine(transaction);
+            }
+        }
+    }
+    else if (choice == 5)
+    {
+        WriteLine("Thank you for using our ATM!");
+    }
+    else
+    {
+        WriteLine("Invalid option!");
+    }
+}
