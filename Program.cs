@@ -151,15 +151,62 @@ using static System.Console;
 
 // eighth task finding the largest number in an array using a for loop and printing the result
 
-int[] numbers = { 12, 45, 7, 89, 23, 56 };
+// int[] numbers = { 12, 45, 7, 89, 23, 56 };
+
+// int largest = numbers[0];
+
+// for (int i = 1; i < numbers.Length; i++)
+// {
+//     if (numbers[i] > largest)
+//     {
+//         largest = numbers[i];
+//     }
+// }
+// WriteLine("The largest number in the array is: " + largest);
+
+
+
+
+// NUMBER ANALYZER PROGRAM
+// Takes numbers from the user and finds their largest, smallest,
+// sum, average, and counts even and odd numbers.
+
+static bool IsEven(int n)
+{
+    return n % 2 == 0;
+}
+
+Write("How many numbers? ");
+int count = Convert.ToInt32(ReadLine());
+
+int[] numbers = new int[count];
+
+for (int i = 0; i < count; i++)
+{
+    Write("Enter number: ");
+    numbers[i] = Convert.ToInt32(ReadLine());
+}
 
 int largest = numbers[0];
+int smallest = numbers[0];
+int sum = 0;
+int even = 0;
+int odd = 0;
 
-for (int i = 1; i < numbers.Length; i++)
+for (int i = 0; i < count; i++)
 {
-    if (numbers[i] > largest)
-    {
-        largest = numbers[i];
-    }
+    if (numbers[i] > largest) largest = numbers[i];
+    if (numbers[i] < smallest) smallest = numbers[i];
+
+    sum += numbers[i];
+
+    if (IsEven(numbers[i])) even++;
+    else odd++;
 }
-WriteLine("The largest number in the array is: " + largest);
+
+WriteLine("\nLargest: " + largest);
+WriteLine("Smallest: " + smallest);
+WriteLine("Sum: " + sum);
+WriteLine("Average: " + (double)sum / count);
+WriteLine("Even: " + even);
+WriteLine("Odd: " + odd);
