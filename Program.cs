@@ -171,42 +171,71 @@ using static System.Console;
 // Takes numbers from the user and finds their largest, smallest,
 // sum, average, and counts even and odd numbers.
 
-static bool IsEven(int n)
+// static bool IsEven(int n)
+// {
+//     return n % 2 == 0;
+// }
+
+// Write("How many numbers? ");
+// int count = Convert.ToInt32(ReadLine());
+
+// int[] numbers = new int[count];
+
+// for (int i = 0; i < count; i++)
+// {
+//     Write("Enter number: ");
+//     numbers[i] = Convert.ToInt32(ReadLine());
+// }
+
+// int largest = numbers[0];
+// int smallest = numbers[0];
+// int sum = 0;
+// int even = 0;
+// int odd = 0;
+
+// for (int i = 0; i < count; i++)
+// {
+//     if (numbers[i] > largest) largest = numbers[i];
+//     if (numbers[i] < smallest) smallest = numbers[i];
+
+//     sum += numbers[i];
+
+//     if (IsEven(numbers[i])) even++;
+//     else odd++;
+// }
+
+// WriteLine("\nLargest: " + largest);
+// WriteLine("Smallest: " + smallest);
+// WriteLine("Sum: " + sum);
+// WriteLine("Average: " + (double)sum / count);
+// WriteLine("Even: " + even);
+// WriteLine("Odd: " + odd);
+
+
+// STUDENT MARKS MANAGER PROGRAM
+// Stores student marks in a List and calculates their average.
+
+List<int> marks = new List<int>();
+
+for (int i = 1; i <= 5; i++)
 {
-    return n % 2 == 0;
+    Write("Enter marks: ");
+    marks.Add(Convert.ToInt32(ReadLine()));
 }
 
-Write("How many numbers? ");
-int count = Convert.ToInt32(ReadLine());
+int total = 0;
 
-int[] numbers = new int[count];
-
-for (int i = 0; i < count; i++)
+foreach (int mark in marks)
 {
-    Write("Enter number: ");
-    numbers[i] = Convert.ToInt32(ReadLine());
+    total += mark;
 }
 
-int largest = numbers[0];
-int smallest = numbers[0];
-int sum = 0;
-int even = 0;
-int odd = 0;
+WriteLine("\nAll Marks:");
 
-for (int i = 0; i < count; i++)
+foreach (int mark in marks)
 {
-    if (numbers[i] > largest) largest = numbers[i];
-    if (numbers[i] < smallest) smallest = numbers[i];
-
-    sum += numbers[i];
-
-    if (IsEven(numbers[i])) even++;
-    else odd++;
+    WriteLine(mark);
 }
 
-WriteLine("\nLargest: " + largest);
-WriteLine("Smallest: " + smallest);
-WriteLine("Sum: " + sum);
-WriteLine("Average: " + (double)sum / count);
-WriteLine("Even: " + even);
-WriteLine("Odd: " + odd);
+WriteLine("Total: " + total);
+WriteLine("Average: " + (double)total / marks.Count);
